@@ -7,8 +7,10 @@ namespace EditorHtml
         public static void Show()
         {
             Console.Clear();
+            Console.BackgroundColor = ConsoleColor.Blue;
+            Console.ForegroundColor = ConsoleColor.Black;
 
-
+            
             Tela();
             OpcoesUsuarios();
 
@@ -18,33 +20,10 @@ namespace EditorHtml
         }
 
         public static void Tela()
-        {
-            Console.Write("+");
-            for (int i = 0; i < 30; i++)
-                Console.Write("-");
-
-            Console.Write("+");
-            Console.Write("\n");
-
-            for (int linha = 0; linha <= 10; linha++)
-            {
-                Console.Write("|");
-                for (int i = 0; i < 30; i++)
-                    Console.Write(" ");
-
-                Console.Write("|");
-                Console.Write("\n");
-
-            }
-
-            Console.Write("+");
-            for (int i = 0; i < 30; i++)
-                Console.Write("-");
-
-            Console.Write("+");
-            Console.Write("\n");
-
-
+        {            
+            DesenhoTela();
+            LinhasDaTela();
+            DesenhoTela(); 
         }
 
 
@@ -75,7 +54,7 @@ namespace EditorHtml
             switch (opcao)
             {
                 case 1: Editor.Show(); break;
-                case 2: Console.WriteLine("Visualizar"); break;
+                case 2: Visualizador.Show(""); break;
                 case 0:
                     {
                         Console.Clear();
@@ -83,6 +62,29 @@ namespace EditorHtml
                         break;
                     }
                 default: Show(); break;
+
+            }
+        }
+
+        public static void DesenhoTela()
+        {
+            Console.Write("+");
+            for (int i = 0; i < 30; i++)
+                Console.Write("-");
+
+            Console.Write("+");
+            Console.Write("\n");
+        }
+        public static void LinhasDaTela()
+        {
+            for (int linha = 0; linha <= 10; linha++)
+            {
+                Console.Write("|");
+                for (int i = 0; i < 30; i++)
+                    Console.Write(" ");
+
+                Console.Write("|");
+                Console.Write("\n");
 
             }
         }
